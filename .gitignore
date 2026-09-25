@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+runs/
+data/raw/
+data/yolo/
+data/gerbers/
+*.pt
+*_backup*.py
+dashboard_backup.py
+unified_inspection_api.py
+check_patch.py
+.env
+*.key
+*.pem
