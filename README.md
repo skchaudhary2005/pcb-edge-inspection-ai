@@ -88,4 +88,9 @@ The system provides an end-to-end workflow from live camera input through YOLO11
 
 **Sumit Kumar**
 
+
+### 📬 Connect With Me
+- GitHub: [skchaudhary2005](https://github.com/skchaudhary2005)
+- LinkedIn: [Sumit Kumar](https://www.linkedin.com/in/sumit-chaudhary-41b306327/)
+
 ⭐ If you find this project useful, consider starring the repository.
