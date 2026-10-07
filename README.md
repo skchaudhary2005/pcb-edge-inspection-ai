@@ -1,67 +1,80 @@
-# PCB Edge Inspection AI
+# 🔍 PCB Edge Inspection AI
 
 AI-powered PCB visual inspection using YOLO11, live USB camera, Gerber mapping, operator guidance, and inspection history.
 
-## Features
+## 🎯 Objectives
+- Automate PCB visual inspection
+- Detect PCB defects with YOLO11
+- Provide PASS/FAIL inspection support
+- Map detections to Gerber geometry
+- Maintain inspection history
 
-- YOLO11 PCB defect detection
-- CUDA/GPU inference
-- Live USB camera inspection
-- PASS/FAIL decision
-- Gerber geometry integration
-- Camera-to-Gerber coordinate mapping
-- Operator guidance
-- Inspection history and CSV logging
-- Streamlit dashboard
-- FastAPI inspection API
+## 🚀 Features
+- 🤖 YOLO11 defect detection
+- ⚡ CUDA/GPU inference
+- 📷 Live USB camera inspection
+- ✅ PASS/FAIL decision
+- 📐 Gerber geometry integration
+- 🗺️ Camera-to-Gerber coordinate mapping
+- 👷 Operator guidance
+- 📋 Inspection history and CSV logging
+- 🎛️ Streamlit dashboard
+- ⚙️ FastAPI inspection API
 
-## Detected Defects
+## 🧪 Detected Defects
+The current DeepPCB-trained model supports:
+- Open
+- Short
+- Mousebite
+- Spur
+- Copper
+- Pin-hole
 
-The current DeepPCB-trained model supports: open, short, mousebite, spur, copper, and pin-hole.
+## 🛠️ Technology Stack
+- Python 3.11
+- YOLO11
+- PyTorch
+- CUDA
+- OpenCV
+- FastAPI
+- Uvicorn
+- Streamlit
+- Pandas
+- NumPy
+- Gerbonara
 
-## Technology Stack
+## 🔄 Architecture
 
-Python 3.11, YOLO11, PyTorch, CUDA, OpenCV, FastAPI, Uvicorn, Streamlit, Pandas, NumPy, Gerbonara.
+USB Camera → FastAPI → YOLO11 → Defect Detection → Camera Coordinates → Gerber Mapping → Operator Guidance → PASS/FAIL → Inspection History → Dashboard
 
-## Run
+## ▶️ Run
 
-Activate the environment:
+Activate the environment and start the API:
 
-    .venv\\Scripts\\activate
-
-Start the API:
-
+    .venv\Scripts\activate
     python -m uvicorn live_api:app --host 127.0.0.1 --port 8001
 
 Start the dashboard in another terminal:
 
     streamlit run dashboard_final.py --server.port 8507
 
-Open http://localhost:8507
+Open:
 
-## Architecture
+    http://localhost:8507
 
-USB Camera -> FastAPI -> YOLO11 -> Defect Detection -> Camera Coordinates -> Gerber Mapping -> Operator Guidance -> PASS/FAIL -> Inspection History -> Dashboard
+## ⚠️ Current Limitations
+- Physical camera-to-Gerber calibration still requires validation against the corresponding PCB.
+- The current detector covers the six DeepPCB classes listed above.
+- Additional SMT defects require suitable labeled training data.
+- Live predictions require physical validation before being treated as confirmed defects.
 
-## Gerber Mapping
+## 📊 Status
 
-The current camera-to-Gerber transform is a synthetic software/demo transform. Physical camera calibration against the corresponding PCB has not yet been validated.
+**Software MVP: Functional**
 
-## Current Limitations
+The system provides an end-to-end workflow from live camera input through YOLO11 detection, Gerber coordinate mapping, operator guidance, PASS/FAIL decision, and inspection history.
 
-- Physical camera-to-Gerber calibration requires the corresponding PCB.
-- Current detector covers the six DeepPCB defect classes listed above.
-- Additional SMT-specific defects require suitable labeled training data.
-- Live predictions require physical validation before being treated as confirmed PCB defects.
-
-## Status
-
-Software MVP: Functional.
-
-The system provides an end-to-end software workflow from live camera input through YOLO11 detection, Gerber coordinate mapping, operator guidance, PASS/FAIL decision, and inspection history.
-
-## Future Scope
-
+## 🔮 Future Scope
 - Real camera-to-Gerber calibration
 - Additional SMT defect datasets
 - Missing-component detection
@@ -70,3 +83,9 @@ The system provides an end-to-end software workflow from live camera input throu
 - Solder-paste inspection
 - Production-line integration
 - Edge-device deployment
+
+## 👨‍💻 Author
+
+**Sumit Kumar**
+
+⭐ If you find this project useful, consider starring the repository.
